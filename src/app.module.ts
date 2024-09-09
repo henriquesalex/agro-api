@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProducerModule } from './producer/producer.module';
+import { Producer } from './producer/entities/producer.entity';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { ProducerModule } from './producer/producer.module';
       password: '2812',
       database: 'rural_producers',
       autoLoadEntities: true,
-      synchronize: true,  // Desativar em produção
+      synchronize: true,  // dev
+      entities: [Producer],
     }),
     ProducerModule,
   ],

@@ -57,6 +57,9 @@ export class ProducerService {
       throw new NotFoundException('Produtor não encontrado.');
     }
   }
+  async findOne(id: number): Promise<Producer> {
+    return await this.producerRepository.findOne({ where: { id } });
+  }
 
   async findAll(): Promise<Producer[]> {
     return await this.producerRepository.find();

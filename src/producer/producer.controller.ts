@@ -31,9 +31,15 @@ export class ProducerController {
   async findAll() {
     return await this.producerService.findAll();
   }
-
+  
   @Get('/statistics')
   async getStatistics() {
     return this.producerService.getStatistics();
   }
+  
+  @Get(':id')
+  async findOne(@Param('id') id: number) {
+    return await this.producerService.findOne(id);
+  }
+
 }

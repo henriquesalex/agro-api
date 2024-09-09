@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString, IsArray, ValidateIf } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString, IsArray } from 'class-validator';
 
 export class CreateProducerDto {
   @IsNotEmpty()
